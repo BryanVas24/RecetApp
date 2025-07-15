@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/*Esta es la manera en la que se generan colores personalizados*/
+@theme {
+  --color-mainGreen: #1b676b;
+  --color-secondaryGreen: #519548;
+  --color-dullGreen: #88c425;
+  --color-shinyGreen: #bef202;
+  --color-creamColor: #eafde6;
+  /*Si... le puse verde timido*/
+  --color-shyGreen: #c9f1d4;
+}
