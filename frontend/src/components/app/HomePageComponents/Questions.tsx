@@ -63,19 +63,28 @@ export default function Questions() {
       {/*Esto es lo de las preguntas */}
       <section className="p-5 grid grid-cols-2">
         <div className="col-span-2 md:col-span-1 flex flex-col items-center gap-5">
-          <h2 className="text-3xl font-bold text-mainGreen animate__animated animate__fadeInDown">
+          <h2
+            className="text-3xl font-bold text-mainGreen"
+            data-aos="fade-down"
+          >
             Preguntas frecuentes
           </h2>
           <img
             src={manWhitCellphone}
             alt="Hombre viendo el celular"
-            className="w-md animate__animated animate__fadeInLeft"
+            className="w-md"
+            data-aos="fade-right"
+            data-aos-delay="200"
           />
         </div>
-        <div className="col-span-2 md:col-span-1 p-2 md:p-5">
+        <div
+          className="col-span-2 md:col-span-1 p-2 md:p-5"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
           <Collapse
             size="large"
-            className="shadow-xl animate__animated animate__fadeInRight"
+            className="shadow-xl"
             items={items}
             defaultActiveKey={["1"]}
             expandIconPosition="end"
@@ -86,15 +95,21 @@ export default function Questions() {
       </section>
       {/*Esto es lo del libro */}
       <section className="flex flex-col justify-center items-center p-5 gap-5">
-        <h2 className="text-3xl font-bold text-mainGreen animate__animated animate__fadeInUp">
+        <h2 className="text-3xl font-bold text-mainGreen" data-aos="fade-up">
           Registrate ahora mismo!
         </h2>
         <img
-          className="w-md animate__animated animate__fadeInUp"
+          className="w-md"
           src={book}
           alt="imagen de libro"
+          data-aos="fade-up"
+          data-aos-delay="200"
         />
-        <button className="animate__animated animate__fadeInUp mt-4 bg-mainGreen hover:bg-secondaryGreen text-white font-bold py-3 px-6 rounded-full shadow-md transition-all hover:shadow-lg">
+        <button
+          className="mt-4 bg-mainGreen hover:bg-secondaryGreen text-white font-bold py-3 px-6 rounded-full shadow-md transition-all hover:shadow-lg"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
           ¡Explora recetas ahora!
         </button>
       </section>

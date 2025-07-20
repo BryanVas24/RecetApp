@@ -4,7 +4,7 @@ import "animate.css"; // Asegúrate de tener instalado animate.css
 
 export default function AboutTheApp() {
   //Si quieren meter más haganlo acá pero si son muchas separenlas en otro archivo y vean como se ve porque actualmente solo esta pensado para 3
-  //Lás animaciones son de animate.css
+  // Cambiado a animaciones de AOS,antes eran de animate.css
   const thingsToDoInApp = [
     {
       id: 1,
@@ -13,7 +13,7 @@ export default function AboutTheApp() {
         "Sé parte de la biblioteca culinaria más grande de todas y en constante crecimiento.",
       icon: <FaUpload className="text-2xl" />,
       color: "bg-dullGreen",
-      animation: "animate__fadeInLeft",
+      animation: "fade-left",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export default function AboutTheApp() {
         "Recetas de chefs y usuarios como tú. Descubre nuevas ideas cada día.",
       icon: <FaSearch className="text-2xl" />,
       color: "bg-secondaryGreen",
-      animation: "animate__fadeInUp",
+      animation: "fade-up",
     },
     {
       id: 3,
@@ -31,13 +31,15 @@ export default function AboutTheApp() {
         "Organízalas en colecciones personalizadas. Fácil de acceder luego.",
       icon: <FaBookmark className="text-2xl" />,
       color: "bg-mainGreen",
-      animation: "animate__fadeInRight",
+      animation: "fade-right",
     },
-    
   ];
 
   return (
-    <section className="bg-shyGreen m-10 rounded-2xl p-5 grid grid-cols-1 md:grid-cols-3 gap-8 animate__animated animate__fadeIn shadow-xl">
+    <section
+      className="bg-shyGreen m-10 rounded-2xl p-5 grid grid-cols-1 md:grid-cols-3 gap-8 shadow-xl"
+      data-aos="fade-in" // Animación para toda la sección
+    >
       <article className="col-span-2 md:col-span-2">
         <h2 className="text-3xl text-mainGreen font-bold p-2">
           Unete a la comunidad de recetApp! <br />
@@ -47,11 +49,12 @@ export default function AboutTheApp() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-          {/*Lo del ternario en este caso es para el tiempo de la animación, siempre va saliendo en orden pero apartir del cuarto saldran todas de una*/}
           {thingsToDoInApp.map((toDoInApp) => (
             <div
               key={toDoInApp.id}
-              className={`p-5 rounded-xl bg-creamColor shadow-md ${toDoInApp.animation} animate__animated animate__delay-${toDoInApp.id <4 ? toDoInApp.id : 4}s transition hover:scale-105`}
+              className={`p-5 rounded-xl bg-creamColor shadow-md transition hover:scale-105`}
+              data-aos={toDoInApp.animation}
+              data-aos-delay={toDoInApp.id * 100} // Retraso progresivo
             >
               <div
                 className={`w-12 h-12 rounded-full text-white ${toDoInApp.color} flex items-center justify-center mb-4`}
@@ -67,8 +70,11 @@ export default function AboutTheApp() {
         </div>
       </article>
 
-      {/*Apartado de la imagen*/}
-      <div className="col-span-2 md:col-span-1 flex justify-center items-center animate__animated animate__fadeIn animate__delay-1s">
+      <div
+        className="col-span-2 md:col-span-1 flex justify-center items-center"
+        data-aos="fade-left"
+        data-aos-delay="300"
+      >
         <div className="rounded-full bg-white p-4 shadow-lg">
           <img
             className="w-full max-w-xs"
